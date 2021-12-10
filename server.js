@@ -1,6 +1,6 @@
 const express = require('express');
 
-// const routes = require('./controllers');
+const routes = require('./controllers');
 const sequelize = require('./config/connection');
 
 require('dotenv').config();
@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(session(sess));
 
 // turn on routes
-// app.use(routes);
+app.use(routes);
 
 // connection to db and server
 sequelize.sync({ force: false }).then(() => {
