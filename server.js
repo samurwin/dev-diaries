@@ -1,6 +1,6 @@
 const express = require('express');
 
-const routes = require('./controllers');
+const routes = require('./controllers/');
 const sequelize = require('./config/connection');
 
 require('dotenv').config();
@@ -19,7 +19,7 @@ const sess = {
 };
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -32,5 +32,5 @@ app.use(routes);
 
 // connection to db and server
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now Listening'));
+    app.listen(PORT, () => console.log('Now listening'));
 });

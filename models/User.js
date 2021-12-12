@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create the User model
@@ -14,19 +14,17 @@ User.init(
     // define User model columns
     {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true
         },
-
         username: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
-
         email: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             // validate email
@@ -34,9 +32,8 @@ User.init(
                 isEmail: true
             }
         },
-
         password: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             // validate password
             validate: {
