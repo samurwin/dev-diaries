@@ -1,0 +1,13 @@
+<div class="flex flex-col mx-10 my-10">
+    <h1 class="text-5xl font-mono text-slate-600 font-bold">Feed</h1>
+</div>
+
+<div class="flex flex-col mx-10">
+    <ul>
+        {{#each posts as |post|}}
+        <li>
+            {{> post_info post}}
+        </li>
+        {{/each}}
+    </ul>
+</div>

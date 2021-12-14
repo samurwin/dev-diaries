@@ -18,7 +18,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build:css": "tailwind build src/style.css -o public/stylesheets/main.css"
   },
   "repository": {
     "type": "git",
