@@ -2,6 +2,7 @@ const express = require('express');
 
 const routes = require('./controllers/');
 const sequelize = require('./config/connection');
+const exphbs = require('express-handlebars');
 
 require('dotenv').config();
 
@@ -27,8 +28,15 @@ app.use(express.json());
 // turn on session
 app.use(session(sess));
 
+// make front-end static resources
+app.use(express.static(path.join(__dirname, 'public')));
+
 // turn on routes
 app.use(routes);
+
+// set up handlebars
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // connection to db and server
 sequelize.sync({ force: false }).then(() => {
