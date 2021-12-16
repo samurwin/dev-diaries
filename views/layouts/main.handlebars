@@ -10,25 +10,25 @@
 <body class="bg-slate-100">
     <header class="bg-slate-600 sticky top-0">
         <div class="flex flex-row justify-between px-8 py-6">
-            <h1 class="font-mono text-2xl font-semibold text-emerald-300">
-                <a href="/">Dev Diaries</a>
+            <h1 class="font-mono text-2xl font-semibold text-emerald-300 tracking-wider">
+                <a href="/">DEV DIARIES</a>
             </h1>
             <nav>
                 {{#if loggedIn}}
                 <a href=''>My Profile</a>
                 <button id='logout'>Logout</button>
                 {{else}}
-                <a href='' class="font-mono font-normal text-slate-600 bg-emerald-300 rounded py-2 px-2">Login/Signup</a>
+                <a href='./login' class="font-mono font-normal text-slate-600 bg-emerald-300 rounded py-2 px-2 hover:bg-emerald-400">Login/Signup</a>
                 {{/if}}
             </nav>
         </div>
     </header>
 
-    <main class="container">
+    <main class="container h-full">
         {{{ body }}}
     </main>
 
-    <footer class="flex justify-center border-2 border-t-slate-200 bottom-0 font-mono text-slate-400 text-base py-3">
+    <footer class="flex justify-center border-2 border-t-slate-200 bottom-0 absolute inset-x-0 font-mono text-slate-400 text-base py-3 bg-slate-100">
         Happy Coding!
     </footer>
 </body>
