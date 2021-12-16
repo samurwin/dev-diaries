@@ -15,8 +15,8 @@
             </h1>
             <nav>
                 {{#if loggedIn}}
-                <a href=''>My Profile</a>
-                <button id='logout'>Logout</button>
+                <a href='' class='font-mono text-emerald-300 font-medium hover:text-emerald-400 mr-5'>My Profile</a>
+                <button id='logout' class='font-mono text-emerald-300 font-medium hover:text-emerald-400'>Logout</button>
                 {{else}}
                 <a href='./login' class="font-mono font-normal text-slate-600 bg-emerald-300 rounded py-2 px-2 hover:bg-emerald-400">Login/Signup</a>
                 {{/if}}
@@ -24,12 +24,15 @@
         </div>
     </header>
 
-    <main class="container h-full">
+    <main class="w-full h-screen">
         {{{ body }}}
     </main>
 
-    <footer class="flex justify-center border-2 border-t-slate-200 bottom-0 absolute inset-x-0 font-mono text-slate-400 text-base py-3 bg-slate-100">
+    <footer class="flex justify-center border-2 border-t-slate-200 bottom-0 sticky inset-x-0 font-mono text-slate-400 text-base py-3 bg-slate-100">
         Happy Coding!
     </footer>
+        {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 </body>
 </html>
