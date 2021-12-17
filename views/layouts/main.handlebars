@@ -15,10 +15,10 @@
             </h1>
             <nav>
                 {{#if loggedIn}}
-                <a href='' class='font-mono text-emerald-300 font-medium hover:text-emerald-400 mr-5'>My Profile</a>
+                <a href='/profile' class='font-mono text-emerald-300 font-medium hover:text-emerald-400 mr-5'>My Profile</a>
                 <button id='logout' class='font-mono text-emerald-300 font-medium hover:text-emerald-400'>Logout</button>
                 {{else}}
-                <a href='./login' class="font-mono font-normal text-slate-600 bg-emerald-300 rounded py-2 px-2 hover:bg-emerald-400">Login/Signup</a>
+                <a href='/login' class="font-mono font-normal text-slate-600 bg-emerald-300 rounded py-2 px-2 hover:bg-emerald-400">Login/Signup</a>
                 {{/if}}
             </nav>
         </div>

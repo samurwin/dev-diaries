@@ -3,7 +3,7 @@ module.exports = {
   "./views/homepage.handlebars", 
   "./views/partials/post_info.handlebars", 
   "./views/login.handlebars",
-"./javascript/login.js"],
+"./views/profile.handlebars"],
   theme: {
     extend: {},
   },

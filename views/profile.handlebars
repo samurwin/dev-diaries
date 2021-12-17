@@ -1,0 +1,32 @@
+<div class="flex flex-row justify-center mx-20 mt-10">
+<div class="flex flex-col w-1/3 mt-10">
+    <h1 class="text-5xl font-mono text-slate-600 font-bold">My Profile</h1>
+    <h2 class="mt-4 text-4xl font-mono font-semibold text-emerald-400">Hello <span>{{user.username}}</span>!</h2>
+    <a href='' class="mt-6 w-1/2 font-mono font-normal text-slate-600 bg-emerald-300 rounded py-2 px-2 hover:bg-emerald-400 text-center">Edit My Profile</a>
+</div>
+
+<form class="w-2/3 rounded-md border bg-slate-50 shadow-sm flex flex-col p-5 mb-8">
+    <h2 class="font-mono text-2xl text-emerald-400 font-bold">Create a Post</h2>
+    <div class='mb-2'>
+        <label for="post-title" class="font-mono text-sm font-medium text-slate-400">Title:</label>
+        <input type="text" name="post-title" placeholder="Enter a title..." 
+        class='placeholder:italic placeholder:text-slate-300 block w-full border border-slate-400 rounded-md py-2 px-3 focus:outline-none focus:ring-emerald-300 focus:ring-2 focus:border-none'>
+    </div>
+    <div class='mb-2'>
+        <textarea name="post-body" placeholder="What's on your mind?" rows="8" col="100"
+        class='placeholder:italic placeholder:text-slate-300 block w-full border border-slate-400 rounded-md py-2 px-3 focus:outline-none focus:ring-emerald-300 focus:ring-2 focus:border-none'></textarea>
+    </div>
+    <button id='create-btn' type='submit' class="font-mono font-normal text-slate-600 bg-emerald-300 rounded py-2 pl-4 hover:bg-emerald-400">Create Post</button>
+</form>
+</div>
+
+<div class="flex flex-col mx-10">
+    <h2 class="mb-4 text-4xl font-mono font-semibold text-slate-600">My Posts</h2>
+    <ul>
+        {{#each posts as |post|}}
+        <li>
+            {{> post_info post}}
+        </li>
+        {{/each}}
+    </ul>
+</div>
