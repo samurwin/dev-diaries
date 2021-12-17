@@ -1,11 +1,9 @@
-<article class="rounded border bg-slate-50 shadow-sm flex flex-col p-5 mb-8">
-    <div class="pb-3">
-        <h3 class="font-mono text-xl font-semibold text-slate-700">{{title}}</h3>
-        <div class="flex flex-row justify-between px-1">
-        <p class="font-mono text-sm text-slate-400 italic">by {{user.username}}</p>
-        <p class="font-mono text-sm text-slate-400 italic">{{created_at}}</p>
-        </div>
+<div class="pb-3">
+    <h3 class="font-mono text-xl font-semibold text-slate-700">{{title}}</h3>
+    <div class="flex flex-row justify-between px-1">
+    <p class="font-mono text-sm text-slate-400 italic">by {{user.username}}</p>
+    <p class="font-mono text-sm text-slate-400 italic">{{created_at}}</p>
     </div>
-    <p class="font-sans text-base text-slate-700">{{post_body}}</p>
-    <a href='/post/{{id}}' class="font-mono text-emerald-600 text-base pt-3">{{comments.length}} Comments</a>
-</article>
+</div>
+<p class="font-sans text-base text-slate-700">{{post_body}}</p>
+<a href='/post/{{id}}' class="font-mono text-emerald-600 text-base pt-3">{{comments.length}} Comments</a>

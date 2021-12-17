@@ -26,10 +26,10 @@ router.get('/', (req, res) => {
     .then(dbPostData => {
         // serialize the data
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        const user = {
+        const sessionUser = {
             username: req.session.username
         }
-        res.render('profile', { posts, user, loggedIn: true });
+        res.render('profile', { posts, sessionUser, loggedIn: true });
     })
     .catch(err => {
         console.log(err);

@@ -564,6 +564,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -776,6 +780,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-emerald-600 {
   --tw-text-opacity: 1;
   color: rgb(5 150 105 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .shadow-sm {
