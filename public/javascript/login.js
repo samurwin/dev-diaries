@@ -23,17 +23,9 @@ async function signupFormHandler(event) {
         });
 
         if (response.ok) {
-            const alertEl = document.createElement('div')
-            .classList.add('bg-emerald-300', 'py-2', 'px-3', 'text-mono', 'text-bold', 'text-slate-700', 'text-center', 'my-2')
-            .textContent = 'Account Created Successfully!';
-
-            mainContainerEl.prepend(alertEl);
+            console.log('Account Created');
         } else {
-            const alertEl = document.createElement('div')
-            .classList.add('bg-red-300', 'py-2', 'px-3', 'text-mono', 'text-bold', 'text-slate-700', 'text-center', 'my-2')
-            .textContent = response.statusText;
-
-            mainContainerEl.prepend(alertEl);
+            alert(response.statusText);
         }
     }
 };
@@ -57,18 +49,12 @@ async function loginFormHandler(event) {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            const alertEl = document.createElement('div')
-            .classList.add('bg-red-300', 'py-2', 'px-3', 'text-mono', 'text-bold', 'text-slate-700', 'text-center', 'my-2')
-            .textContent = response.statusText;
-
-            mainContainerEl.prepend(alertEl);
+            alert(response.statusText);
         }
     }
 };
 
-function correctLength(event) {
-    // event.preventDefault();
-
+function correctLength() {
     const checkmarkEl = document.createElement('img');
     
     checkmarkEl.setAttribute("src", "../assets/checkmark.svg");
