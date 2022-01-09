@@ -68,7 +68,7 @@ router.post('/', (req, res) => {
 });
 
 // update a post
-router.post('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     Post.update(req.body, {
         where: {
             id: req.params.id

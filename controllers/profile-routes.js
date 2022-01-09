@@ -37,4 +37,39 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/edit/:id', (req, res) => {
+    Post.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id', 'title', 'post_body', 'created_at'],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'comment_body', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['id', 'username']
+                }
+            }
+        ]
+    })
+    .then(dbPostData => {
+        // serialize data 
+        const post = dbPostData.get({ plain: true });
+        res.render('edit-post', {
+            post,
+            loggedIn: true
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+})
+
 module.exports = router;
