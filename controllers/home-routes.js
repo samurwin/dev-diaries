@@ -34,12 +34,46 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/post/:id', (req, res) => {
+    Post.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id', 'title', 'post_body', 'created_at'],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'comment_body', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['id', 'username']
+                }
+            }
+        ]
+    })
+    .then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({ message: 'No Post Found.' });
+        }
+        const post = dbPostData.get({ plain: true });
+        res.render('single-post', { post, loggedIn: req.session.loggedIn });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+})
+
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
     res.render('login');
-})
+});
 
 module.exports = router;

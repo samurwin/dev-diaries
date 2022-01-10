@@ -1,7 +1,8 @@
-const editPostFormEl = document.getElementById('edit-post');
+const editPostBtnEl = document.getElementById('edit-btn');
 
 async function editPostFormHandler(event) {
     event.preventDefault();
+    event.stopImmediatePropagation();
 
     const title = document.querySelector('input[name="post-title"]').value.trim();
     const post_body = document.querySelector('textarea[name="post-body"]').value.trim();
@@ -25,4 +26,4 @@ async function editPostFormHandler(event) {
     }
 }
 
-editPostFormEl.addEventListener('submit', editPostFormHandler);
+editPostBtnEl.addEventListener('click', editPostFormHandler);
