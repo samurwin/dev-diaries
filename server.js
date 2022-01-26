@@ -8,7 +8,7 @@ const hbs = exphbs.create({});
 
 require('dotenv').config();
 
-const SECRET = process.env.SECRET || PD_SECRET;
+const SECRET = process.env.SECRET || process.env.PD_SECRET;
 
 // configure session
 const session = require('express-session');
