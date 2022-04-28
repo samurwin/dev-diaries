@@ -6,7 +6,7 @@
     {{#if loggedIn}}
     <form id='add-comment' class="rounded border bg-slate-50 shadow-sm flex flex-col p-5 mb-2">
         <div class='mb-2'>
-        <textarea name="comment-body" rows="2" col="100"
+        <textarea id='comment-body' name="comment-body" rows="2" col="100"
         class='placeholder:italic placeholder:text-slate-300 block w-full border border-slate-400 rounded-md py-2 px-3 focus:outline-none focus:ring-emerald-300 focus:ring-2 focus:border-none'></textarea>
         </div>
         <button id='comment-btn' type='submit' class="w-1/6 font-mono font-normal text-slate-600 bg-emerald-300 rounded py-2 pl-4 hover:bg-emerald-400">Add Comment</button>
@@ -23,3 +23,5 @@
     </div>
     {{/each}}
 </section>
+
+<script src='/javascript/add-comment.js'></script>
