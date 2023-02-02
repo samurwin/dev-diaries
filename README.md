@@ -8,7 +8,7 @@ Dev Diaries is a tech blog forum. Users with an account can create posts and com
 
 ![Screenshot of website](./dev-diaries.jpg)
 
-[Deployed Website](https://polar-retreat-06699.herokuapp.com/)
+[Deployed Website](https://cryptic-dusk-52607.herokuapp.com/)
 
 ## Technologies 
 
